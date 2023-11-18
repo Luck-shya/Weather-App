@@ -22,9 +22,7 @@ app.post("/", function (req, res) {
 
   https.get(url, function (response) {
     console.log(response.statusCode);
-    if (response.statusCode != 200) {
-      history.back(-1);
-    }
+
     response.on("data", function (data) {
       const weatherData = JSON.parse(data);
       const temp = weatherData.main.temp;
